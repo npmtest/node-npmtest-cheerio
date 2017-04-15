@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!doctype html>
+<html lang="en">
+<head>
     <title>Code coverage report for node-npmtest-cheerio/cheerio/lib/api/traversing.js</title>
     <meta charset="utf-8">
     <style>
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-cheerio/cheerio/lib/api/</a> » traversing.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-cheerio/cheerio/lib/api/</a> &#187; traversing.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -1085,429 +1087,428 @@
       reduce: require('lodash.reduce')
     };
 &nbsp;
-exports.find = <span class="fstat-no" title="function not covered">function(selectorOrHaystack) {</span>
-<span class="cstat-no" title="statement not covered">  var elems = _.reduce(this, <span class="fstat-no" title="function not covered">function(memo, elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    return memo.concat(_.filter(elem.children, isTag));</span>
+exports.find = <span class="fstat-no" title="function not covered" >function(selectorOrHaystack) {</span>
+<span class="cstat-no" title="statement not covered" >  var elems = _.reduce(this, <span class="fstat-no" title="function not covered" >function(memo, elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    return memo.concat(_.filter(elem.children, isTag));</span>
   }, []);
-<span class="cstat-no" title="statement not covered">  var contains = this.constructor.contains;</span>
-<span class="cstat-no" title="statement not covered">  var haystack;</span>
+<span class="cstat-no" title="statement not covered" >  var contains = this.constructor.contains;</span>
+<span class="cstat-no" title="statement not covered" >  var haystack;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (selectorOrHaystack &amp;&amp; typeof selectorOrHaystack !== 'string') {</span>
-<span class="cstat-no" title="statement not covered">    if (selectorOrHaystack.cheerio) {</span>
-<span class="cstat-no" title="statement not covered">      haystack = selectorOrHaystack.get();</span>
+<span class="cstat-no" title="statement not covered" >  if (selectorOrHaystack &amp;&amp; typeof selectorOrHaystack !== 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    if (selectorOrHaystack.cheerio) {</span>
+<span class="cstat-no" title="statement not covered" >      haystack = selectorOrHaystack.get();</span>
     } else {
-<span class="cstat-no" title="statement not covered">      haystack = [selectorOrHaystack];</span>
+<span class="cstat-no" title="statement not covered" >      haystack = [selectorOrHaystack];</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return this._make(haystack.filter(<span class="fstat-no" title="function not covered">function(elem) {</span></span>
-<span class="cstat-no" title="statement not covered">      var idx, len;</span>
-<span class="cstat-no" title="statement not covered">      for (idx = 0, len = this.length; idx &lt; len; ++idx) {</span>
-<span class="cstat-no" title="statement not covered">        if (contains(this[idx], elem)) {</span>
-<span class="cstat-no" title="statement not covered">          return true;</span>
+<span class="cstat-no" title="statement not covered" >    return this._make(haystack.filter(<span class="fstat-no" title="function not covered" >function(elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >      var idx, len;</span>
+<span class="cstat-no" title="statement not covered" >      for (idx = 0, len = this.length; idx &lt; len; ++idx) {</span>
+<span class="cstat-no" title="statement not covered" >        if (contains(this[idx], elem)) {</span>
+<span class="cstat-no" title="statement not covered" >          return true;</span>
         }
       }
     }, this));
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var options = {__proto__: this.options, context: this.toArray()};</span>
+<span class="cstat-no" title="statement not covered" >  var options = {__proto__: this.options, context: this.toArray()};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return this._make(select(selectorOrHaystack, elems, options));</span>
+<span class="cstat-no" title="statement not covered" >  return this._make(select(selectorOrHaystack, elems, options));</span>
 };
 &nbsp;
 // Get the parent of each element in the current set of matched elements,
 // optionally filtered by a selector.
-exports.parent = <span class="fstat-no" title="function not covered">function(selector) {</span>
-<span class="cstat-no" title="statement not covered">  var set = [];</span>
+exports.parent = <span class="fstat-no" title="function not covered" >function(selector) {</span>
+<span class="cstat-no" title="statement not covered" >  var set = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  domEach(this, <span class="fstat-no" title="function not covered">function(idx, elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    var parentElem = elem.parent;</span>
-<span class="cstat-no" title="statement not covered">    if (parentElem &amp;&amp; set.indexOf(parentElem) &lt; 0) {</span>
-<span class="cstat-no" title="statement not covered">      set.push(parentElem);</span>
+<span class="cstat-no" title="statement not covered" >  domEach(this, <span class="fstat-no" title="function not covered" >function(idx, elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    var parentElem = elem.parent;</span>
+<span class="cstat-no" title="statement not covered" >    if (parentElem &amp;&amp; set.indexOf(parentElem) &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      set.push(parentElem);</span>
     }
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (arguments.length) {</span>
-<span class="cstat-no" title="statement not covered">    set = exports.filter.call(set, selector, this);</span>
+<span class="cstat-no" title="statement not covered" >  if (arguments.length) {</span>
+<span class="cstat-no" title="statement not covered" >    set = exports.filter.call(set, selector, this);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return this._make(set);</span>
+<span class="cstat-no" title="statement not covered" >  return this._make(set);</span>
 };
 &nbsp;
-exports.parents = <span class="fstat-no" title="function not covered">function(selector) {</span>
-<span class="cstat-no" title="statement not covered">  var parentNodes = [];</span>
+exports.parents = <span class="fstat-no" title="function not covered" >function(selector) {</span>
+<span class="cstat-no" title="statement not covered" >  var parentNodes = [];</span>
 &nbsp;
   // When multiple DOM elements are in the original set, the resulting set will
   // be in *reverse* order of the original elements as well, with duplicates
   // removed.
-<span class="cstat-no" title="statement not covered">  this.get().reverse().forEach(<span class="fstat-no" title="function not covered">function(elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    traverseParents(this, elem.parent, selector, Infinity)</span>
-      .forEach(<span class="fstat-no" title="function not covered">function(node) {</span>
-<span class="cstat-no" title="statement not covered">        if (parentNodes.indexOf(node) === -1) {</span>
-<span class="cstat-no" title="statement not covered">          parentNodes.push(node);</span>
+<span class="cstat-no" title="statement not covered" >  this.get().reverse().forEach(<span class="fstat-no" title="function not covered" >function(elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    traverseParents(this, elem.parent, selector, Infinity)</span>
+      .forEach(<span class="fstat-no" title="function not covered" >function(node) {</span>
+<span class="cstat-no" title="statement not covered" >        if (parentNodes.indexOf(node) === -1) {</span>
+<span class="cstat-no" title="statement not covered" >          parentNodes.push(node);</span>
         }
       }
     );
   }, this);
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return this._make(parentNodes);</span>
+<span class="cstat-no" title="statement not covered" >  return this._make(parentNodes);</span>
 };
 &nbsp;
-exports.parentsUntil = <span class="fstat-no" title="function not covered">function(selector, filter) {</span>
-<span class="cstat-no" title="statement not covered">  var parentNodes = [], untilNode, untilNodes;</span>
+exports.parentsUntil = <span class="fstat-no" title="function not covered" >function(selector, filter) {</span>
+<span class="cstat-no" title="statement not covered" >  var parentNodes = [], untilNode, untilNodes;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (typeof selector === 'string') {</span>
-<span class="cstat-no" title="statement not covered">    untilNode = select(selector, this.parents().toArray(), this.options)[0];</span>
-  } else <span class="cstat-no" title="statement not covered">if (selector &amp;&amp; selector.cheerio) {</span>
-<span class="cstat-no" title="statement not covered">    untilNodes = selector.toArray();</span>
-  } else <span class="cstat-no" title="statement not covered">if (selector) {</span>
-<span class="cstat-no" title="statement not covered">    untilNode = selector;</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof selector === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    untilNode = select(selector, this.parents().toArray(), this.options)[0];</span>
+  } else <span class="cstat-no" title="statement not covered" >if (selector &amp;&amp; selector.cheerio) {</span>
+<span class="cstat-no" title="statement not covered" >    untilNodes = selector.toArray();</span>
+  } else <span class="cstat-no" title="statement not covered" >if (selector) {</span>
+<span class="cstat-no" title="statement not covered" >    untilNode = selector;</span>
   }
 &nbsp;
   // When multiple DOM elements are in the original set, the resulting set will
   // be in *reverse* order of the original elements as well, with duplicates
   // removed.
 &nbsp;
-<span class="cstat-no" title="statement not covered">  this.toArray().reverse().forEach(<span class="fstat-no" title="function not covered">function(elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    while ((elem = elem.parent)) {</span>
-<span class="cstat-no" title="statement not covered">      if ((untilNode &amp;&amp; elem !== untilNode) ||</span>
+<span class="cstat-no" title="statement not covered" >  this.toArray().reverse().forEach(<span class="fstat-no" title="function not covered" >function(elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    while ((elem = elem.parent)) {</span>
+<span class="cstat-no" title="statement not covered" >      if ((untilNode &amp;&amp; elem !== untilNode) ||</span>
         (untilNodes &amp;&amp; untilNodes.indexOf(elem) === -1) ||
         (!untilNode &amp;&amp; !untilNodes)) {
-<span class="cstat-no" title="statement not covered">        if (isTag(elem) &amp;&amp; parentNodes.indexOf(elem) === -1) { <span class="cstat-no" title="statement not covered">parentNodes.push(elem); </span>}</span>
+<span class="cstat-no" title="statement not covered" >        if (isTag(elem) &amp;&amp; parentNodes.indexOf(elem) === -1) { <span class="cstat-no" title="statement not covered" >parentNodes.push(elem); </span>}</span>
       } else {
-<span class="cstat-no" title="statement not covered">        break;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
       }
     }
   }, this);
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return this._make(filter ? select(filter, parentNodes, this.options) : parentNodes);</span>
+<span class="cstat-no" title="statement not covered" >  return this._make(filter ? select(filter, parentNodes, this.options) : parentNodes);</span>
 };
 &nbsp;
 // For each element in the set, get the first element that matches the selector
 // by testing the element itself and traversing up through its ancestors in the
 // DOM tree.
-exports.closest = <span class="fstat-no" title="function not covered">function(selector) {</span>
-<span class="cstat-no" title="statement not covered">  var set = [];</span>
+exports.closest = <span class="fstat-no" title="function not covered" >function(selector) {</span>
+<span class="cstat-no" title="statement not covered" >  var set = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (!selector) {</span>
-<span class="cstat-no" title="statement not covered">    return this._make(set);</span>
+<span class="cstat-no" title="statement not covered" >  if (!selector) {</span>
+<span class="cstat-no" title="statement not covered" >    return this._make(set);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  domEach(this, <span class="fstat-no" title="function not covered">function(idx, elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    var closestElem = traverseParents(this, elem, selector, 1)[0];</span>
+<span class="cstat-no" title="statement not covered" >  domEach(this, <span class="fstat-no" title="function not covered" >function(idx, elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    var closestElem = traverseParents(this, elem, selector, 1)[0];</span>
 &nbsp;
     // Do not add duplicate elements to the set
-<span class="cstat-no" title="statement not covered">    if (closestElem &amp;&amp; set.indexOf(closestElem) &lt; 0) {</span>
-<span class="cstat-no" title="statement not covered">      set.push(closestElem);</span>
+<span class="cstat-no" title="statement not covered" >    if (closestElem &amp;&amp; set.indexOf(closestElem) &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      set.push(closestElem);</span>
     }
   }.bind(this));
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return this._make(set);</span>
+<span class="cstat-no" title="statement not covered" >  return this._make(set);</span>
 };
 &nbsp;
-exports.next = <span class="fstat-no" title="function not covered">function(selector) {</span>
-<span class="cstat-no" title="statement not covered">  if (!this[0]) { <span class="cstat-no" title="statement not covered">return this; </span>}</span>
-<span class="cstat-no" title="statement not covered">  var elems = [];</span>
+exports.next = <span class="fstat-no" title="function not covered" >function(selector) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!this[0]) { <span class="cstat-no" title="statement not covered" >return this; </span>}</span>
+<span class="cstat-no" title="statement not covered" >  var elems = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  _.forEach(this, <span class="fstat-no" title="function not covered">function(elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    while ((elem = elem.next)) {</span>
-<span class="cstat-no" title="statement not covered">      if (isTag(elem)) {</span>
-<span class="cstat-no" title="statement not covered">        elems.push(elem);</span>
-<span class="cstat-no" title="statement not covered">        return;</span>
+<span class="cstat-no" title="statement not covered" >  _.forEach(this, <span class="fstat-no" title="function not covered" >function(elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    while ((elem = elem.next)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isTag(elem)) {</span>
+<span class="cstat-no" title="statement not covered" >        elems.push(elem);</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
       }
     }
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return selector ?</span>
+<span class="cstat-no" title="statement not covered" >  return selector ?</span>
     exports.filter.call(elems, selector, this) :
     this._make(elems);
 };
 &nbsp;
-exports.nextAll = <span class="fstat-no" title="function not covered">function(selector) {</span>
-<span class="cstat-no" title="statement not covered">  if (!this[0]) { <span class="cstat-no" title="statement not covered">return this; </span>}</span>
-<span class="cstat-no" title="statement not covered">  var elems = [];</span>
+exports.nextAll = <span class="fstat-no" title="function not covered" >function(selector) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!this[0]) { <span class="cstat-no" title="statement not covered" >return this; </span>}</span>
+<span class="cstat-no" title="statement not covered" >  var elems = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  _.forEach(this, <span class="fstat-no" title="function not covered">function(elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    while ((elem = elem.next)) {</span>
-<span class="cstat-no" title="statement not covered">      if (isTag(elem) &amp;&amp; elems.indexOf(elem) === -1) {</span>
-<span class="cstat-no" title="statement not covered">        elems.push(elem);</span>
+<span class="cstat-no" title="statement not covered" >  _.forEach(this, <span class="fstat-no" title="function not covered" >function(elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    while ((elem = elem.next)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isTag(elem) &amp;&amp; elems.indexOf(elem) === -1) {</span>
+<span class="cstat-no" title="statement not covered" >        elems.push(elem);</span>
       }
     }
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return selector ?</span>
+<span class="cstat-no" title="statement not covered" >  return selector ?</span>
     exports.filter.call(elems, selector, this) :
     this._make(elems);
 };
 &nbsp;
-exports.nextUntil = <span class="fstat-no" title="function not covered">function(selector, filterSelector) {</span>
-<span class="cstat-no" title="statement not covered">  if (!this[0]) { <span class="cstat-no" title="statement not covered">return this; </span>}</span>
-<span class="cstat-no" title="statement not covered">  var elems = [], untilNode, untilNodes;</span>
+exports.nextUntil = <span class="fstat-no" title="function not covered" >function(selector, filterSelector) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!this[0]) { <span class="cstat-no" title="statement not covered" >return this; </span>}</span>
+<span class="cstat-no" title="statement not covered" >  var elems = [], untilNode, untilNodes;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (typeof selector === 'string') {</span>
-<span class="cstat-no" title="statement not covered">    untilNode = select(selector, this.nextAll().get(), this.options)[0];</span>
-  } else <span class="cstat-no" title="statement not covered">if (selector &amp;&amp; selector.cheerio) {</span>
-<span class="cstat-no" title="statement not covered">    untilNodes = selector.get();</span>
-  } else <span class="cstat-no" title="statement not covered">if (selector) {</span>
-<span class="cstat-no" title="statement not covered">    untilNode = selector;</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof selector === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    untilNode = select(selector, this.nextAll().get(), this.options)[0];</span>
+  } else <span class="cstat-no" title="statement not covered" >if (selector &amp;&amp; selector.cheerio) {</span>
+<span class="cstat-no" title="statement not covered" >    untilNodes = selector.get();</span>
+  } else <span class="cstat-no" title="statement not covered" >if (selector) {</span>
+<span class="cstat-no" title="statement not covered" >    untilNode = selector;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  _.forEach(this, <span class="fstat-no" title="function not covered">function(elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    while ((elem = elem.next)) {</span>
-<span class="cstat-no" title="statement not covered">      if ((untilNode &amp;&amp; elem !== untilNode) ||</span>
+<span class="cstat-no" title="statement not covered" >  _.forEach(this, <span class="fstat-no" title="function not covered" >function(elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    while ((elem = elem.next)) {</span>
+<span class="cstat-no" title="statement not covered" >      if ((untilNode &amp;&amp; elem !== untilNode) ||</span>
         (untilNodes &amp;&amp; untilNodes.indexOf(elem) === -1) ||
         (!untilNode &amp;&amp; !untilNodes)) {
-<span class="cstat-no" title="statement not covered">        if (isTag(elem) &amp;&amp; elems.indexOf(elem) === -1) {</span>
-<span class="cstat-no" title="statement not covered">          elems.push(elem);</span>
+<span class="cstat-no" title="statement not covered" >        if (isTag(elem) &amp;&amp; elems.indexOf(elem) === -1) {</span>
+<span class="cstat-no" title="statement not covered" >          elems.push(elem);</span>
         }
       } else {
-<span class="cstat-no" title="statement not covered">        break;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
       }
     }
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return filterSelector ?</span>
+<span class="cstat-no" title="statement not covered" >  return filterSelector ?</span>
     exports.filter.call(elems, filterSelector, this) :
     this._make(elems);
 };
 &nbsp;
-exports.prev = <span class="fstat-no" title="function not covered">function(selector) {</span>
-<span class="cstat-no" title="statement not covered">  if (!this[0]) { <span class="cstat-no" title="statement not covered">return this; </span>}</span>
-<span class="cstat-no" title="statement not covered">  var elems = [];</span>
+exports.prev = <span class="fstat-no" title="function not covered" >function(selector) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!this[0]) { <span class="cstat-no" title="statement not covered" >return this; </span>}</span>
+<span class="cstat-no" title="statement not covered" >  var elems = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  _.forEach(this, <span class="fstat-no" title="function not covered">function(elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    while ((elem = elem.prev)) {</span>
-<span class="cstat-no" title="statement not covered">      if (isTag(elem)) {</span>
-<span class="cstat-no" title="statement not covered">        elems.push(elem);</span>
-<span class="cstat-no" title="statement not covered">        return;</span>
+<span class="cstat-no" title="statement not covered" >  _.forEach(this, <span class="fstat-no" title="function not covered" >function(elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    while ((elem = elem.prev)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isTag(elem)) {</span>
+<span class="cstat-no" title="statement not covered" >        elems.push(elem);</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
       }
     }
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return selector ?</span>
+<span class="cstat-no" title="statement not covered" >  return selector ?</span>
     exports.filter.call(elems, selector, this) :
     this._make(elems);
 };
 &nbsp;
-exports.prevAll = <span class="fstat-no" title="function not covered">function(selector) {</span>
-<span class="cstat-no" title="statement not covered">  if (!this[0]) { <span class="cstat-no" title="statement not covered">return this; </span>}</span>
-<span class="cstat-no" title="statement not covered">  var elems = [];</span>
+exports.prevAll = <span class="fstat-no" title="function not covered" >function(selector) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!this[0]) { <span class="cstat-no" title="statement not covered" >return this; </span>}</span>
+<span class="cstat-no" title="statement not covered" >  var elems = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  _.forEach(this, <span class="fstat-no" title="function not covered">function(elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    while ((elem = elem.prev)) {</span>
-<span class="cstat-no" title="statement not covered">      if (isTag(elem) &amp;&amp; elems.indexOf(elem) === -1) {</span>
-<span class="cstat-no" title="statement not covered">        elems.push(elem);</span>
+<span class="cstat-no" title="statement not covered" >  _.forEach(this, <span class="fstat-no" title="function not covered" >function(elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    while ((elem = elem.prev)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isTag(elem) &amp;&amp; elems.indexOf(elem) === -1) {</span>
+<span class="cstat-no" title="statement not covered" >        elems.push(elem);</span>
       }
     }
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return selector ?</span>
+<span class="cstat-no" title="statement not covered" >  return selector ?</span>
     exports.filter.call(elems, selector, this) :
     this._make(elems);
 };
 &nbsp;
-exports.prevUntil = <span class="fstat-no" title="function not covered">function(selector, filterSelector) {</span>
-<span class="cstat-no" title="statement not covered">  if (!this[0]) { <span class="cstat-no" title="statement not covered">return this; </span>}</span>
-<span class="cstat-no" title="statement not covered">  var elems = [], untilNode, untilNodes;</span>
+exports.prevUntil = <span class="fstat-no" title="function not covered" >function(selector, filterSelector) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!this[0]) { <span class="cstat-no" title="statement not covered" >return this; </span>}</span>
+<span class="cstat-no" title="statement not covered" >  var elems = [], untilNode, untilNodes;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (typeof selector === 'string') {</span>
-<span class="cstat-no" title="statement not covered">    untilNode = select(selector, this.prevAll().get(), this.options)[0];</span>
-  } else <span class="cstat-no" title="statement not covered">if (selector &amp;&amp; selector.cheerio) {</span>
-<span class="cstat-no" title="statement not covered">    untilNodes = selector.get();</span>
-  } else <span class="cstat-no" title="statement not covered">if (selector) {</span>
-<span class="cstat-no" title="statement not covered">    untilNode = selector;</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof selector === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    untilNode = select(selector, this.prevAll().get(), this.options)[0];</span>
+  } else <span class="cstat-no" title="statement not covered" >if (selector &amp;&amp; selector.cheerio) {</span>
+<span class="cstat-no" title="statement not covered" >    untilNodes = selector.get();</span>
+  } else <span class="cstat-no" title="statement not covered" >if (selector) {</span>
+<span class="cstat-no" title="statement not covered" >    untilNode = selector;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  _.forEach(this, <span class="fstat-no" title="function not covered">function(elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    while ((elem = elem.prev)) {</span>
-<span class="cstat-no" title="statement not covered">      if ((untilNode &amp;&amp; elem !== untilNode) ||</span>
+<span class="cstat-no" title="statement not covered" >  _.forEach(this, <span class="fstat-no" title="function not covered" >function(elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    while ((elem = elem.prev)) {</span>
+<span class="cstat-no" title="statement not covered" >      if ((untilNode &amp;&amp; elem !== untilNode) ||</span>
         (untilNodes &amp;&amp; untilNodes.indexOf(elem) === -1) ||
         (!untilNode &amp;&amp; !untilNodes)) {
-<span class="cstat-no" title="statement not covered">        if (isTag(elem) &amp;&amp; elems.indexOf(elem) === -1) {</span>
-<span class="cstat-no" title="statement not covered">          elems.push(elem);</span>
+<span class="cstat-no" title="statement not covered" >        if (isTag(elem) &amp;&amp; elems.indexOf(elem) === -1) {</span>
+<span class="cstat-no" title="statement not covered" >          elems.push(elem);</span>
         }
       } else {
-<span class="cstat-no" title="statement not covered">        break;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
       }
     }
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return filterSelector ?</span>
+<span class="cstat-no" title="statement not covered" >  return filterSelector ?</span>
     exports.filter.call(elems, filterSelector, this) :
     this._make(elems);
 };
 &nbsp;
-exports.siblings = <span class="fstat-no" title="function not covered">function(selector) {</span>
-<span class="cstat-no" title="statement not covered">  var parent = this.parent();</span>
+exports.siblings = <span class="fstat-no" title="function not covered" >function(selector) {</span>
+<span class="cstat-no" title="statement not covered" >  var parent = this.parent();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var elems = _.filter(</span>
+<span class="cstat-no" title="statement not covered" >  var elems = _.filter(</span>
     parent ? parent.children() : this.siblingsAndMe(),
-    _.bind(<span class="fstat-no" title="function not covered">function(elem) {</span> <span class="cstat-no" title="statement not covered">return isTag(elem) &amp;&amp; !this.is(elem); </span>}, this)
+    _.bind(<span class="fstat-no" title="function not covered" >function(elem) {</span> <span class="cstat-no" title="statement not covered" >return isTag(elem) &amp;&amp; !this.is(elem); </span>}, this)
   );
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (selector !== undefined) {</span>
-<span class="cstat-no" title="statement not covered">    return exports.filter.call(elems, selector, this);</span>
+<span class="cstat-no" title="statement not covered" >  if (selector !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >    return exports.filter.call(elems, selector, this);</span>
   } else {
-<span class="cstat-no" title="statement not covered">    return this._make(elems);</span>
+<span class="cstat-no" title="statement not covered" >    return this._make(elems);</span>
   }
 };
 &nbsp;
-exports.children = <span class="fstat-no" title="function not covered">function(selector) {</span>
+exports.children = <span class="fstat-no" title="function not covered" >function(selector) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var elems = _.reduce(this, <span class="fstat-no" title="function not covered">function(memo, elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    return memo.concat(_.filter(elem.children, isTag));</span>
+<span class="cstat-no" title="statement not covered" >  var elems = _.reduce(this, <span class="fstat-no" title="function not covered" >function(memo, elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    return memo.concat(_.filter(elem.children, isTag));</span>
   }, []);
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (selector === undefined) <span class="cstat-no" title="statement not covered">return this._make(elems);</span></span>
+<span class="cstat-no" title="statement not covered" >  if (selector === undefined) <span class="cstat-no" title="statement not covered" >return this._make(elems);</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return exports.filter.call(elems, selector, this);</span>
+<span class="cstat-no" title="statement not covered" >  return exports.filter.call(elems, selector, this);</span>
 };
 &nbsp;
-exports.contents = <span class="fstat-no" title="function not covered">function() {</span>
-<span class="cstat-no" title="statement not covered">  return this._make(_.reduce(this, <span class="fstat-no" title="function not covered">function(all, elem) {</span></span>
-<span class="cstat-no" title="statement not covered">    all.push.apply(all, elem.children);</span>
-<span class="cstat-no" title="statement not covered">    return all;</span>
+exports.contents = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >  return this._make(_.reduce(this, <span class="fstat-no" title="function not covered" >function(all, elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >    all.push.apply(all, elem.children);</span>
+<span class="cstat-no" title="statement not covered" >    return all;</span>
   }, []));
 };
 &nbsp;
-exports.each = <span class="fstat-no" title="function not covered">function(fn) {</span>
-<span class="cstat-no" title="statement not covered">  var i = 0, len = this.length;</span>
-<span class="cstat-no" title="statement not covered">  while (i &lt; len &amp;&amp; fn.call(this[i], i, this[i]) !== false) <span class="cstat-no" title="statement not covered">++i;</span></span>
-<span class="cstat-no" title="statement not covered">  return this;</span>
+exports.each = <span class="fstat-no" title="function not covered" >function(fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var i = 0, len = this.length;</span>
+<span class="cstat-no" title="statement not covered" >  while (i &lt; len &amp;&amp; fn.call(this[i], i, this[i]) !== false) <span class="cstat-no" title="statement not covered" >++i;</span></span>
+<span class="cstat-no" title="statement not covered" >  return this;</span>
 };
 &nbsp;
-exports.map = <span class="fstat-no" title="function not covered">function(fn) {</span>
-<span class="cstat-no" title="statement not covered">  return this._make(_.reduce(this, <span class="fstat-no" title="function not covered">function(memo, el, i) {</span></span>
-<span class="cstat-no" title="statement not covered">    var val = fn.call(el, i, el);</span>
-<span class="cstat-no" title="statement not covered">    return val == null ? memo : memo.concat(val);</span>
+exports.map = <span class="fstat-no" title="function not covered" >function(fn) {</span>
+<span class="cstat-no" title="statement not covered" >  return this._make(_.reduce(this, <span class="fstat-no" title="function not covered" >function(memo, el, i) {</span></span>
+<span class="cstat-no" title="statement not covered" >    var val = fn.call(el, i, el);</span>
+<span class="cstat-no" title="statement not covered" >    return val == null ? memo : memo.concat(val);</span>
   }, []));
 };
 &nbsp;
 var makeFilterMethod = function(filterFn) {
-  return <span class="fstat-no" title="function not covered">function(match, container) {</span>
-<span class="cstat-no" title="statement not covered">    var testFn;</span>
-<span class="cstat-no" title="statement not covered">    container = container || this;</span>
+  return <span class="fstat-no" title="function not covered" >function(match, container) {</span>
+<span class="cstat-no" title="statement not covered" >    var testFn;</span>
+<span class="cstat-no" title="statement not covered" >    container = container || this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (typeof match === 'string') {</span>
-<span class="cstat-no" title="statement not covered">      testFn = select.compile(match, container.options);</span>
-    } else <span class="cstat-no" title="statement not covered">if (typeof match === 'function') {</span>
-<span class="cstat-no" title="statement not covered">      testFn = <span class="fstat-no" title="function not covered">function(el, i) {</span></span>
-<span class="cstat-no" title="statement not covered">        return match.call(el, i, el);</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof match === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >      testFn = select.compile(match, container.options);</span>
+    } else <span class="cstat-no" title="statement not covered" >if (typeof match === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >      testFn = <span class="fstat-no" title="function not covered" >function(el, i) {</span></span>
+<span class="cstat-no" title="statement not covered" >        return match.call(el, i, el);</span>
       };
-    } else <span class="cstat-no" title="statement not covered">if (match.cheerio) {</span>
-<span class="cstat-no" title="statement not covered">      testFn = match.is.bind(match);</span>
+    } else <span class="cstat-no" title="statement not covered" >if (match.cheerio) {</span>
+<span class="cstat-no" title="statement not covered" >      testFn = match.is.bind(match);</span>
     } else {
-<span class="cstat-no" title="statement not covered">      testFn = <span class="fstat-no" title="function not covered">function(el) {</span></span>
-<span class="cstat-no" title="statement not covered">        return match === el;</span>
+<span class="cstat-no" title="statement not covered" >      testFn = <span class="fstat-no" title="function not covered" >function(el) {</span></span>
+<span class="cstat-no" title="statement not covered" >        return match === el;</span>
       };
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return container._make(filterFn(this, testFn));</span>
+<span class="cstat-no" title="statement not covered" >    return container._make(filterFn(this, testFn));</span>
   };
 };
 &nbsp;
 exports.filter = makeFilterMethod(_.filter);
 exports.not = makeFilterMethod(_.reject);
 &nbsp;
-exports.has = <span class="fstat-no" title="function not covered">function(selectorOrHaystack) {</span>
-<span class="cstat-no" title="statement not covered">  var that = this;</span>
-<span class="cstat-no" title="statement not covered">  return exports.filter.call(this, <span class="fstat-no" title="function not covered">function() {</span></span>
-<span class="cstat-no" title="statement not covered">    return that._make(this).find(selectorOrHaystack).length &gt; 0;</span>
+exports.has = <span class="fstat-no" title="function not covered" >function(selectorOrHaystack) {</span>
+<span class="cstat-no" title="statement not covered" >  var that = this;</span>
+<span class="cstat-no" title="statement not covered" >  return exports.filter.call(this, <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >    return that._make(this).find(selectorOrHaystack).length &gt; 0;</span>
   });
 };
 &nbsp;
-exports.first = <span class="fstat-no" title="function not covered">function() {</span>
-<span class="cstat-no" title="statement not covered">  return this.length &gt; 1 ? this._make(this[0]) : this;</span>
+exports.first = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >  return this.length &gt; 1 ? this._make(this[0]) : this;</span>
 };
 &nbsp;
-exports.last = <span class="fstat-no" title="function not covered">function() {</span>
-<span class="cstat-no" title="statement not covered">  return this.length &gt; 1 ? this._make(this[this.length - 1]) : this;</span>
+exports.last = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >  return this.length &gt; 1 ? this._make(this[this.length - 1]) : this;</span>
 };
 &nbsp;
 // Reduce the set of matched elements to the one at the specified index.
-exports.eq = <span class="fstat-no" title="function not covered">function(i) {</span>
-<span class="cstat-no" title="statement not covered">  i = +i;</span>
+exports.eq = <span class="fstat-no" title="function not covered" >function(i) {</span>
+<span class="cstat-no" title="statement not covered" >  i = +i;</span>
 &nbsp;
   // Use the first identity optimization if possible
-<span class="cstat-no" title="statement not covered">  if (i === 0 &amp;&amp; this.length &lt;= 1) <span class="cstat-no" title="statement not covered">return this;</span></span>
+<span class="cstat-no" title="statement not covered" >  if (i === 0 &amp;&amp; this.length &lt;= 1) <span class="cstat-no" title="statement not covered" >return this;</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (i &lt; 0) <span class="cstat-no" title="statement not covered">i = this.length + i;</span></span>
-<span class="cstat-no" title="statement not covered">  return this[i] ? this._make(this[i]) : this._make([]);</span>
+<span class="cstat-no" title="statement not covered" >  if (i &lt; 0) <span class="cstat-no" title="statement not covered" >i = this.length + i;</span></span>
+<span class="cstat-no" title="statement not covered" >  return this[i] ? this._make(this[i]) : this._make([]);</span>
 };
 &nbsp;
 // Retrieve the DOM elements matched by the jQuery object.
-exports.get = <span class="fstat-no" title="function not covered">function(i) {</span>
-<span class="cstat-no" title="statement not covered">  if (i == null) {</span>
-<span class="cstat-no" title="statement not covered">    return Array.prototype.slice.call(this);</span>
+exports.get = <span class="fstat-no" title="function not covered" >function(i) {</span>
+<span class="cstat-no" title="statement not covered" >  if (i == null) {</span>
+<span class="cstat-no" title="statement not covered" >    return Array.prototype.slice.call(this);</span>
   } else {
-<span class="cstat-no" title="statement not covered">    return this[i &lt; 0 ? (this.length + i) : i];</span>
+<span class="cstat-no" title="statement not covered" >    return this[i &lt; 0 ? (this.length + i) : i];</span>
   }
 };
 &nbsp;
 // Search for a given element from among the matched elements.
-exports.index = <span class="fstat-no" title="function not covered">function(selectorOrNeedle) {</span>
-<span class="cstat-no" title="statement not covered">  var $haystack, needle;</span>
+exports.index = <span class="fstat-no" title="function not covered" >function(selectorOrNeedle) {</span>
+<span class="cstat-no" title="statement not covered" >  var $haystack, needle;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (arguments.length === 0) {</span>
-<span class="cstat-no" title="statement not covered">    $haystack = this.parent().children();</span>
-<span class="cstat-no" title="statement not covered">    needle = this[0];</span>
-  } else <span class="cstat-no" title="statement not covered">if (typeof selectorOrNeedle === 'string') {</span>
-<span class="cstat-no" title="statement not covered">    $haystack = this._make(selectorOrNeedle);</span>
-<span class="cstat-no" title="statement not covered">    needle = this[0];</span>
+<span class="cstat-no" title="statement not covered" >  if (arguments.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >    $haystack = this.parent().children();</span>
+<span class="cstat-no" title="statement not covered" >    needle = this[0];</span>
+  } else <span class="cstat-no" title="statement not covered" >if (typeof selectorOrNeedle === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    $haystack = this._make(selectorOrNeedle);</span>
+<span class="cstat-no" title="statement not covered" >    needle = this[0];</span>
   } else {
-<span class="cstat-no" title="statement not covered">    $haystack = this;</span>
-<span class="cstat-no" title="statement not covered">    needle = selectorOrNeedle.cheerio ? selectorOrNeedle[0] : selectorOrNeedle;</span>
+<span class="cstat-no" title="statement not covered" >    $haystack = this;</span>
+<span class="cstat-no" title="statement not covered" >    needle = selectorOrNeedle.cheerio ? selectorOrNeedle[0] : selectorOrNeedle;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return $haystack.get().indexOf(needle);</span>
+<span class="cstat-no" title="statement not covered" >  return $haystack.get().indexOf(needle);</span>
 };
 &nbsp;
-exports.slice = <span class="fstat-no" title="function not covered">function() {</span>
-<span class="cstat-no" title="statement not covered">  return this._make([].slice.apply(this, arguments));</span>
+exports.slice = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >  return this._make([].slice.apply(this, arguments));</span>
 };
 &nbsp;
-<span class="fstat-no" title="function not covered">function traverseParents(self, elem, selector, limit) {</span>
-<span class="cstat-no" title="statement not covered">  var elems = [];</span>
-<span class="cstat-no" title="statement not covered">  while (elem &amp;&amp; elems.length &lt; limit) {</span>
-<span class="cstat-no" title="statement not covered">    if (!selector || exports.filter.call([elem], selector, self).length) {</span>
-<span class="cstat-no" title="statement not covered">      elems.push(elem);</span>
+<span class="fstat-no" title="function not covered" >function traverseParents(self, elem, selector, limit) {</span>
+<span class="cstat-no" title="statement not covered" >  var elems = [];</span>
+<span class="cstat-no" title="statement not covered" >  while (elem &amp;&amp; elems.length &lt; limit) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!selector || exports.filter.call([elem], selector, self).length) {</span>
+<span class="cstat-no" title="statement not covered" >      elems.push(elem);</span>
     }
-<span class="cstat-no" title="statement not covered">    elem = elem.parent;</span>
+<span class="cstat-no" title="statement not covered" >    elem = elem.parent;</span>
   }
-<span class="cstat-no" title="statement not covered">  return elems;</span>
+<span class="cstat-no" title="statement not covered" >  return elems;</span>
 }
 &nbsp;
 // End the most recent filtering operation in the current chain and return the
 // set of matched elements to its previous state.
-exports.end = <span class="fstat-no" title="function not covered">function() {</span>
-<span class="cstat-no" title="statement not covered">  return this.prevObject || this._make([]);</span>
+exports.end = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >  return this.prevObject || this._make([]);</span>
 };
 &nbsp;
-exports.add = <span class="fstat-no" title="function not covered">function(other, context) {</span>
-<span class="cstat-no" title="statement not covered">  var selection = this._make(other, context);</span>
-<span class="cstat-no" title="statement not covered">  var contents = uniqueSort(selection.get().concat(this.get()));</span>
+exports.add = <span class="fstat-no" title="function not covered" >function(other, context) {</span>
+<span class="cstat-no" title="statement not covered" >  var selection = this._make(other, context);</span>
+<span class="cstat-no" title="statement not covered" >  var contents = uniqueSort(selection.get().concat(this.get()));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  for (var i = 0; i &lt; contents.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered">    selection[i] = contents[i];</span>
+<span class="cstat-no" title="statement not covered" >  for (var i = 0; i &lt; contents.length; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >    selection[i] = contents[i];</span>
   }
-<span class="cstat-no" title="statement not covered">  selection.length = contents.length;</span>
+<span class="cstat-no" title="statement not covered" >  selection.length = contents.length;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return selection;</span>
+<span class="cstat-no" title="statement not covered" >  return selection;</span>
 };
 &nbsp;
 // Add the previous set of elements on the stack to the current set, optionally
 // filtered by a selector.
-exports.addBack = <span class="fstat-no" title="function not covered">function(selector) {</span>
-<span class="cstat-no" title="statement not covered">  return this.add(</span>
+exports.addBack = <span class="fstat-no" title="function not covered" >function(selector) {</span>
+<span class="cstat-no" title="statement not covered" >  return this.add(</span>
     arguments.length ? this.prevObject.filter(selector) : this.prevObject
   );
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 03:55:00 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 21:08:35 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
