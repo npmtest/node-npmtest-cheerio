@@ -1,6 +1,6 @@
 # npmtest-cheerio
 
-#### test coverage for  [cheerio (v0.22.0)](https://github.com/cheeriojs/cheerio#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-cheerio.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-cheerio) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-cheerio.svg)](https://travis-ci.org/npmtest/node-npmtest-cheerio)
+#### basic test coverage for  [cheerio (v0.22.0)](https://github.com/cheeriojs/cheerio#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-cheerio.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-cheerio) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-cheerio.svg)](https://travis-ci.org/npmtest/node-npmtest-cheerio)
 
 #### Tiny, fast, and elegant implementation of core jQuery designed specifically for the server
 
